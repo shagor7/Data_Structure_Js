@@ -8,7 +8,35 @@
 //   anagrams('Heart!', 'EARTH') --> True
 //   anagrams('lol', 'lolc') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  //sanitize strings
+  stringA = stringA.toLowerCase().replace(/[\W_]+/g, "");
+  stringB = stringB.toLowerCase().replace(/[\W_]+/g, "");
+
+  const stringASorted = stringA.split("").sort().join("");
+  const stringBSorted = stringB.split("").sort().join("");
+
+  return stringASorted === stringBSorted;
+
+  // if (stringA.length !== stringB.length) {
+  //   return false;
+  // }
+  // const stringAcharCount = {};
+  // for (let i = 0; i < stringA.length; i++) {
+  //   const aChar = stringA[i];
+  //   stringAcharCount[aChar] = stringAcharCount[aChar] + 1 || 1;
+  // }
+
+  // for (let i = 0; i < stringB.length; i++) {
+  //   const bChar = stringB[i];
+  //   if (!stringAcharCount[bChar]) {
+  //     return false;
+  //   } else {
+  //     stringAcharCount[bChar]--;
+  //   }
+  // }
+  // return true;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
